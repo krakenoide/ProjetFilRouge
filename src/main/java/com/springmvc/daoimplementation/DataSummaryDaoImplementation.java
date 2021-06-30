@@ -31,9 +31,11 @@ public class DataSummaryDaoImplementation implements DataSummaryDao{
     private List<Morceau> listeMorceaux;
     private List<Album> listeAlbums;
     
+    
+    
     public DataSummaryDaoImplementation() throws IOException {
-    	this.url=this.getClass().getClassLoader().getResource("indexressources").getPath();
-    	System.out.println(this.url);
+//    	this.url=this.getClass().getClassLoader().getResource("indexressources").getPath();
+//    	System.out.println(this.url);
     }
     
     public void conversionimage() throws IOException{

@@ -27,6 +27,8 @@ public class ControllerLecture {
 	SonDao sonDao;
 	@Autowired
 	DataSummaryDao data;
+	
+	Path tempPath;
 
 	@RequestMapping("/lecture")
 	public String lecture(Model m,@RequestParam(name="id") int id) throws FileNotFoundException, IOException{
@@ -34,13 +36,17 @@ public class ControllerLecture {
 		Son son=sonDao.get1(id);
 		
 		//création d'une mémoire "cache" pour stocker la musique, qu'il faudra remplacer par du javascript
-
-		File pistelecture= new File(PathVersRessourcesWeb.getPath()+"audio/pisteactuelle.mp3");
-		Path path = Paths.get(pistelecture.getAbsolutePath());
-		Files.write(path, son.getSon());
+//
+//		File pistelecture= new File(PathVersRessourcesWeb.getPath()+"audio/pisteactuelle.mp3");
+//		Path path = Paths.get(pistelecture.getAbsolutePath());
+		this.tempPath=Files.createTempFile(null, null);
+		System.out.println(tempPath);
+		Files.write(this.tempPath, son.getSon());
+		
 		m.addAttribute("artiste",mor.getArtiste());
 		m.addAttribute("MorceauEnCours",mor);
-		m.addAttribute("cheminlecture",pistelecture.getAbsolutePath());
+		//m.addAttribute("cheminlecture",pistelecture.getAbsolutePath());
+		m.addAttribute("cheminlecture",this.tempPath);
 		return "WEB-INF/view/Lecture";
 		
 	}
@@ -49,7 +55,7 @@ public class ControllerLecture {
 	public String finlecture(Model m,@RequestParam(name="cache") String chemin) throws FileNotFoundException, IOException{
 		
 		//suppression de la mémoire "cache"
-		File pistelecture= new File(chemin);
+		File pistelecture= new File(this.tempPath.toString());
 		pistelecture.delete();
 		data.recup();
 		m.addAttribute("dataSummary",data);
