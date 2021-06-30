@@ -1,0 +1,58 @@
+*{
+	background: #313133;
+	color:white;
+}
+
+table{
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+.buttonregister{
+	background-color: #3733D0;
+	border: 0px solid black;
+	height: 30px;
+	width: 200px;
+	border-radius: 20px;
+	cursor: pointer;
+	color: white;
+	font-weight: bold;
+	position:absolute;
+  	left: 30%;
+}
+
+.buttoncancel{
+	background-color: #3733D0;
+	border: 0px solid black;
+	height: 30px;
+	width: 80px;
+	border-radius: 20px;
+	cursor: pointer;
+	color: white;
+	font-weight: bold;
+	position:absolute;
+  	left: 62%;
+}
+
+.flex{
+	display:flex;
+}
+
+.select {
+  border: none;
+  border-radius: 4px;
+  border: 2px solid white;
+  font-weight:bold;
+}
+
+.textfield{
+	border: 2px solid white;
+  border-radius: 4px;
+   width: 240px;
+}
+
+.file{
+	border: 2px solid white;
+  font-weight:bold;
+  border-radius: 4px;
+}
