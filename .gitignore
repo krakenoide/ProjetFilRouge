@@ -2,6 +2,6 @@
 
 # compiled output
 
-src/main/java/com/springmvc/modeles/PathVersRessourcesWeb.java
+/src/main/java/com/springmvc/modeles/PathVersRessourcesWeb.java
 
-src/main/webapp/WEB-INF/spring-mvc-config.xml
+/src/main/webapp/WEB-INF/spring-mvc-config
