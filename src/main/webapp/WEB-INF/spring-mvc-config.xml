@@ -28,11 +28,8 @@
 		<property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/fil_rouge_db?useSSL=false&amp;serverTimezone=UTC"></property>
 		<property name="user" value="root"></property>
-<<<<<<< HEAD
 		<property name="password" value="Foutaise1*"></property>
-=======
-		<property name="password" value="22666118"></property>
->>>>>>> aaf80bf6580a2ff8089ed774fcd70edb2578a03f
+
 		<!-- these are connection pool properties for C3P0 -->
         <property name="minPoolSize" value="5" />
         <property name="maxPoolSize" value="20" />
