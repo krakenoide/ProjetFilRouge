@@ -35,6 +35,10 @@
 .nav-links {
     display: flex;
     list-style: none;
+    position: fixed;
+    top: 0px;
+    left: 120px;
+    z-index: 10;
 }
 
 .nav-links li {
@@ -66,7 +70,13 @@
     color: white;
     font-size: 80px;
     font-weight: 100;
-    text-align: center;
+    margin-left: 100px;
+}
+
+.nav-links-animation {
+	display:inline-block;
+	z-index: 10;
+	left:0px;
 }
 
 
@@ -99,7 +109,7 @@
 .most-listened-container {
 	background:#313133;
     min-height: 80vh;
-    padding: 30px 100px;
+    padding: 30px 100px 0px 200px;
     color: white;
 }
 

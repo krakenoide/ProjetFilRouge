@@ -18,5 +18,5 @@
 	<jsp:include page="FenetrePerso/MyAlbums.jsp" />
 	<jsp:include page="FenetrePrincipale/Footer.jsp" />
 </body>
-
+<script src="${pageContext.request.contextPath}/ressourcesweb/javascript/app.js"></script>
 </html>

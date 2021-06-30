@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/ressourcesweb/css/styleprincipal.css" type="text/css"/>
+    
     <title>Web Application</title>
 </head>
 
@@ -16,5 +17,5 @@
 	<jsp:include page="FenetrePrincipale/MostListened.jsp" />
 	<jsp:include page="FenetrePrincipale/Footer.jsp" />
 </body>
-
+<script src="${pageContext.request.contextPath}/ressourcesweb/javascript/app.js"></script>
 </html>
