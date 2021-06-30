@@ -1,6 +1,7 @@
 package com.springmvc.dao;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 import com.springmvc.modeles.Album;

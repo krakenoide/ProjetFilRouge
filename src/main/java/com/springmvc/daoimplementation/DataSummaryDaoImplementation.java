@@ -3,6 +3,7 @@ package com.springmvc.daoimplementation;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -10,6 +11,7 @@ import javax.imageio.ImageIO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,10 +27,16 @@ public class DataSummaryDaoImplementation implements DataSummaryDao{
 	@Autowired
 	private SessionFactory sessionfactory;
 	
+	private String url;
 	private List<Artiste> listeArtistes;
     private List<Genre> listeGenres;
     private List<Morceau> listeMorceaux;
     private List<Album> listeAlbums;
+    
+    public DataSummaryDaoImplementation() throws IOException {
+    	this.url=this.getClass().getClassLoader().getResource("indexressources").getPath();
+    	System.out.println(this.url);
+    }
     
     public void conversionimage() throws IOException{
     	for (int i=0;i<this.getListeArtistes().size();i++) {
