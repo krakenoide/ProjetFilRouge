@@ -34,6 +34,7 @@ public class ControllerLecture {
 		Son son=sonDao.get1(id);
 		
 		//création d'une mémoire "cache" pour stocker la musique, qu'il faudra remplacer par du javascript
+
 		File pistelecture= new File(PathVersRessourcesWeb.getPath()+"audio/pisteactuelle.mp3");
 		Path path = Paths.get(pistelecture.getAbsolutePath());
 		Files.write(path, son.getSon());

@@ -6,6 +6,7 @@ public class PathVersRessourcesWeb {
 	public static String path = "C:/Users/Guillaume/Desktop/Progra/Projets_Java/projetfilrouge/src/main/resources/";
 //	public static String path = "C:/Users/Brice/eclipse-workspace/projetfilrouge/src/main/webapp/ressourcesweb/";
 //	public static String path = "C:/Users/Adrien/eclipse-workspace/projetfilrouge/src/main/webapp/ressourcesweb/";
+
 	
 
 	public PathVersRessourcesWeb() {}

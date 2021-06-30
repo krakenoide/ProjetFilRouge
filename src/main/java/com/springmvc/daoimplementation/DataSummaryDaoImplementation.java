@@ -3,7 +3,6 @@ package com.springmvc.daoimplementation;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -11,7 +10,6 @@ import javax.imageio.ImageIO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -59,12 +57,14 @@ public class DataSummaryDaoImplementation implements DataSummaryDao{
     
     public void delete() throws IOException{
     	for (int i=0;i<this.getListeArtistes().size();i++) {
+
 			String chemin1=PathVersRessourcesWeb.getPath()+"images/mes_artistes/"+
 							"artiste"+(i+1)+".png";
 			File file=new File(chemin1);
 			file.delete();
 		}
     	for (int i=0;i<this.getListeAlbums().size();i++) {
+
 			String chemin2=PathVersRessourcesWeb.getPath()+"images/mes_albums/"+
 							"album"+(i+1)+".png";
 			File file = new File(chemin2);
