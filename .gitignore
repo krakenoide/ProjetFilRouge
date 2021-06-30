@@ -1,7 +1,5 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# compiled output
+PathVersRessourcesWeb.java
 
-/src/main/java/com/springmvc/modeles/PathVersRessourcesWeb.java
-
-/src/main/webapp/WEB-INF/spring-mvc-config
+spring-mvc-config.xml
