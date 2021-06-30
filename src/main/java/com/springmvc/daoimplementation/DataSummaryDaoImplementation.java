@@ -18,6 +18,7 @@ import com.springmvc.modeles.Album;
 import com.springmvc.modeles.Artiste;
 import com.springmvc.modeles.Genre;
 import com.springmvc.modeles.Morceau;
+import com.springmvc.modeles.PathVersRessourcesWeb;
 
 @Repository
 public class DataSummaryDaoImplementation implements DataSummaryDao{
@@ -31,7 +32,7 @@ public class DataSummaryDaoImplementation implements DataSummaryDao{
     
     public void conversionimage() throws IOException{
     	for (int i=0;i<this.getListeArtistes().size();i++) {
-			String chemin1="C:/Users/Guillaume/Desktop/Progra/Projets_Java/projetfilrouge/src/main/webapp/ressourcesweb/images/mes_artistes/"+
+			String chemin1=PathVersRessourcesWeb.getPath()+"images/mes_artistes/"+
 							"artiste"+(i+1)+".png";
 			File file = new File(chemin1);
 			if (this.getListeArtistes().get(i).getPhotoArtiste()!=null) {
@@ -39,7 +40,7 @@ public class DataSummaryDaoImplementation implements DataSummaryDao{
 			}
 		}
     	for (int i=0;i<this.getListeAlbums().size();i++) {
-			String chemin2="C:/Users/Guillaume/Desktop/Progra/Projets_Java/projetfilrouge/src/main/webapp/ressourcesweb/images/mes_albums/"+
+			String chemin2=PathVersRessourcesWeb.getPath()+"images/mes_albums/"+
 							"album"+(i+1)+".png";
 			File file = new File(chemin2);
 			if (this.getListeAlbums().get(i).getCouverture()!=null) {
@@ -50,13 +51,13 @@ public class DataSummaryDaoImplementation implements DataSummaryDao{
     
     public void delete() throws IOException{
     	for (int i=0;i<this.getListeArtistes().size();i++) {
-			String chemin1="C:/Users/Guillaume/Desktop/Progra/Projets_Java/projetfilrouge/src/main/webapp/ressourcesweb/images/mes_artistes/"+
+			String chemin1=PathVersRessourcesWeb.getPath()+"images/mes_artistes/"+
 							"artiste"+(i+1)+".png";
 			File file=new File(chemin1);
 			file.delete();
 		}
     	for (int i=0;i<this.getListeAlbums().size();i++) {
-			String chemin2="C:/Users/Guillaume/Desktop/Progra/Projets_Java/projetfilrouge/src/main/webapp/ressourcesweb/images/mes_albums/"+
+			String chemin2=PathVersRessourcesWeb.getPath()+"images/mes_albums/"+
 							"album"+(i+1)+".png";
 			File file = new File(chemin2);
 			file.delete();

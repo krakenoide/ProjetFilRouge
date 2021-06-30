@@ -15,6 +15,7 @@ import com.springmvc.dao.DataSummaryDao;
 import com.springmvc.dao.MorceauDao;
 import com.springmvc.dao.SonDao;
 import com.springmvc.modeles.Morceau;
+import com.springmvc.modeles.PathVersRessourcesWeb;
 import com.springmvc.modeles.Son;
 
 @Controller
@@ -33,7 +34,7 @@ public class ControllerLecture {
 		Son son=sonDao.get1(id);
 		
 		//création d'une mémoire "cache" pour stocker la musique, qu'il faudra remplacer par du javascript
-		File pistelecture= new File("C:/Users/Guillaume/Desktop/Progra/Projets_Java/projetfilrouge/src/main/webapp/ressourcesweb/audio/pisteactuelle.mp3");
+		File pistelecture= new File(PathVersRessourcesWeb.getPath()+"audio/pisteactuelle.mp3");
 		Path path = Paths.get(pistelecture.getAbsolutePath());
 		Files.write(path, son.getSon());
 		m.addAttribute("artiste",mor.getArtiste());

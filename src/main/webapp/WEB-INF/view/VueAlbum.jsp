@@ -24,7 +24,7 @@
 						</c:if>
 						<c:if test="${i.album.couverture!=null}">
 							<img class="couverture"
-								src="${pageContext.request.contextPath}/ressourcesweb/images/mes_albums/album${i.album.id}.png">
+								src="${pageContext.request.contextPath}/ressourcesweb/images/mes_albums/album${MorceauEnCours.album.id}.png">
 						</c:if>
 						<c:url value="/lecture" var="ghi">
 							<c:param name="id" value="${i.id}" />

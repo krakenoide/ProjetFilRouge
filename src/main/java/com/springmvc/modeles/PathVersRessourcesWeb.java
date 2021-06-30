@@ -1,10 +1,12 @@
 package com.springmvc.modeles;
 
 public class PathVersRessourcesWeb {
-//	public static String path = "C:\\Users\\brice\\eclipse-workspace\\projetfilrouge\\src\\main\\webapp\\ressourcesweb";
-	public static String path = "C:\\Users\\Aewys\\Downloads\\projetfilrouge12_06\\projetfilrouge\\src\\main\\webapp\\ressourcesweb";
-//	public static String path = "C:\\Users\\Aewys\\tempPFR\\ressourcesweb";
-
+	
+	public static String path = "C:/Users/Aewys/eclipse-workspace/projetfilrouge/src/main/webapp/ressourcesweb/";
+//	public static String path = "C:/Users/Guillaume/eclipse-workspace/projetfilrouge/src/main/webapp/ressourcesweb/";
+//	public static String path = "C:/Users/Brice/eclipse-workspace/projetfilrouge/src/main/webapp/ressourcesweb/";
+//	public static String path = "C:/Users/Adrien/eclipse-workspace/projetfilrouge/src/main/webapp/ressourcesweb/";
+	
 
 	public PathVersRessourcesWeb(){}
 
@@ -15,6 +17,5 @@ public class PathVersRessourcesWeb {
 	public static void setPath(String path) {
 		PathVersRessourcesWeb.path = path;
 	}
-
 	
 }
