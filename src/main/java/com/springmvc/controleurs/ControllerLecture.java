@@ -21,7 +21,7 @@ import com.springmvc.modeles.Son;
 @Controller
 @RequestMapping("/")
 public class ControllerLecture {
-	@Autowired // injection de dependance qui se fait par l'interface
+	@Autowired 
 	MorceauDao morceauDao;
 	@Autowired
 	SonDao sonDao;
@@ -33,8 +33,6 @@ public class ControllerLecture {
 		Morceau mor=morceauDao.get1(id);
 		Son son=sonDao.get1(id);
 		
-		//création d'une mémoire "cache" pour stocker la musique, qu'il faudra remplacer par du javascript
-
 		File pistelecture= new File(PathVersRessourcesWeb.getPath()+"audio/pisteactuelle.mp3");
 		Path path = Paths.get(pistelecture.getAbsolutePath());
 		Files.write(path, son.getSon());
