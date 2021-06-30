@@ -3,7 +3,7 @@ package com.springmvc.modeles;
 public class PathVersRessourcesWeb {
 	
 	
-	public static String path = "C:/Users/Brice/eclipse-workspace/projetfilrouge/src/main/webapp/ressourcesweb/";
+	public static String path = "C:/Users/Aewys/eclipse-workspace/projetfilrouge/src/main/webapp/ressourcesweb/";
 	
 
 	public PathVersRessourcesWeb(){}
