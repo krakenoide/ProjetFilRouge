@@ -26,7 +26,8 @@
 	<!-- configuration de la connection à la base de donnees -->
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/fil_rouge_db?useSSL=false&amp;serverTimezone=UTC"></property>
+	<!--	<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/fil_rouge_db?useSSL=false&amp;serverTimezone=UTC"></property> -->
+		<property name="jdbcUrl" value="jdbc:mysql://database-1.cvsb7ssq9sjz.us-east-2.rds.amazonaws.com:3306/fil_rouge_db?useSSL=false&amp;serverTimezone=UTC"></property>
 		<property name="user" value="root"></property>
 		<property name="password" value="22666118"></property>
 
