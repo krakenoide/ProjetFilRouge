@@ -18,6 +18,7 @@ public class Genre {
     String nomGenre;
     
     //@OneToMany(mappedBy="id_genre",fetch=FetchType.LAZY,cascade={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    //@JsonIgnore
     //private List<Morceau> morceaux;
     
     Genre(){

@@ -15,11 +15,14 @@ import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.springmvc.dao.DataSummaryDao;
 
 
 @Entity
 @Table(name = "morceaux")
+//@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Morceau {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // permet d'autoincrémenter les id en mettant des null
@@ -49,18 +52,22 @@ public class Morceau {
 
 	@OneToOne(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
 	@JoinColumn(name = "id_son")
+	@JsonIgnore
 	private Son son;
 
 	@Transient
 	@Pattern(regexp="[A-Za-z0-9 /]{0,40}",message="Veuillez ne pas utiliser de caractères spéciaux !")
+	@JsonIgnore
 	private String nomAlbum;
 
 	@Transient
 	@Pattern(regexp="[A-Za-z0-9 /]{0,40}",message="Veuillez ne pas utiliser de caractères spéciaux !")
+	@JsonIgnore
 	private String nomArtiste;
 
 	@Transient
 	@Pattern(regexp="[A-Za-z0-9 /]{0,20}",message="*")
+	@JsonIgnore
 	private String nomGenreMorceau;
 	
 	public Morceau() {

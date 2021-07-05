@@ -13,6 +13,8 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name="artistes")
@@ -27,13 +29,16 @@ public class Artiste {
 	
 	@Lob
 	@Column(name = "photo", columnDefinition="BLOB")
+	@JsonIgnore
 	private byte [] photoArtiste;
 
 	
 	@OneToMany(mappedBy="artiste",fetch=FetchType.LAZY,cascade={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@JsonIgnore
 	private List<Album> albums;
 	
 	@OneToMany(mappedBy="artiste",fetch=FetchType.LAZY,cascade={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@JsonIgnore
 	private List<Morceau> morceaux;
 	
 	public Artiste(){

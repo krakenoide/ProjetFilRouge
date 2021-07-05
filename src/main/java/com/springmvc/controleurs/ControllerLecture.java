@@ -34,7 +34,8 @@ public class ControllerLecture {
 		Son son=sonDao.get1(id);
 		
 //		File pistelecture= new File(PathVersRessourcesWeb.getPath()+"audio/pisteactuelle.mp3");
-		File pistelecture= new File("/audio/pisteactuelle.mp3");
+//		File pistelecture= new File("/audio/pisteactuelle.mp3");
+		File pistelecture= new File("/var/app/current/tmp/uploads/pisteactuelle.mp3");
 		Path path = Paths.get(pistelecture.getAbsolutePath());
 		Files.write(path, son.getSon());
 		m.addAttribute("artiste",mor.getArtiste());

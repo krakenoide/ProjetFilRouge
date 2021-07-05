@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="albums")
 public class Album {
@@ -22,7 +24,7 @@ public class Album {
 	@GeneratedValue(strategy=GenerationType.IDENTITY) //permet d'autoincrémenter les id en mettant des null
 	@Column(name="id") //car mon nom de colomne est le meme que mon attribut
 	int id;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name="id_artiste")
 	Artiste artiste;
 	@Column(name="nom_album")
@@ -31,10 +33,12 @@ public class Album {
 	String date_sortie;	
 	@Lob
 	@Column(name = "couverture", columnDefinition="BLOB")
+	@JsonIgnore
 	private byte [] couverture;
 
 	
-	@OneToMany(mappedBy="album",fetch=FetchType.EAGER,cascade={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@OneToMany(mappedBy="album",fetch=FetchType.LAZY,cascade={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@JsonIgnore
 	private List<Morceau> morceaux;
 	
 	public Album(){

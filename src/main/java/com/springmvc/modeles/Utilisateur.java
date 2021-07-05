@@ -17,6 +17,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="users")
 public class Utilisateur {
@@ -31,18 +33,24 @@ public class Utilisateur {
 	String motDePasse; 
 	
 	@OneToMany(mappedBy="user",fetch=FetchType.LAZY,cascade={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@JsonIgnore
 	private List<Role> roles;
 	
 	@OneToMany(mappedBy="createur", cascade= {CascadeType.ALL})
+	@JsonIgnore
 	List <Playlist> playlists;
+	
 	@Transient
+	@JsonIgnore
 	String nom;
 
 
 
 	@Transient
+	@JsonIgnore
 	String prenom;
 	@Transient
+	@JsonIgnore
 	String motDePasseVerification;
 	
 	public Utilisateur() {
